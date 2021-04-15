@@ -37,8 +37,8 @@ export default class App extends React.Component {
             keyLinks.push(<em>None</em>)
 
         return (
-            <div className="App">
-                <header className="App-header">
+            <div className="app">
+                <div className="content">
                     <h1>Stedeem</h1>
             
                     <p>
@@ -51,10 +51,10 @@ export default class App extends React.Component {
 
                     {keyLinks}
 
-                    <div style={{fontSize: "66%", marginTop: "100px", marginBottom: "20px"}}>
+                    <div className="created-by">
                         Created by <a href="https://www.thorne.codes" target="_blank" rel="noreferrer">Thorne Melcher</a> with React.
                     </div>
-                </header>
+                </div>
             </div>
         )
     }
