@@ -24,7 +24,7 @@ export default class App extends React.Component {
 
             keyLinks.push(
                 <div key={results[0]}>
-                    <a href={redeemURL + results[0]} target={results[0]}>{results[0]}</a>
+                    <a href={redeemURL + results[0]} target="_blank" rel="noreferrer">{results[0]}</a>
                 </div>
             )
 
@@ -51,7 +51,7 @@ export default class App extends React.Component {
                     {keyLinks}
 
                     <div style={{fontSize: "66%", marginTop: "100px"}}>
-                        Created by <a href="https://www.thorne.codes">Thorne Melcher</a> in React
+                        Created by <a href="https://www.thorne.codes" target="_blank" rel="noreferrer">Thorne Melcher</a> in React
                     </div>
                 </header>
             </div>
