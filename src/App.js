@@ -50,7 +50,7 @@ export default class App extends React.Component {
                     {keyLinks}
 
                     <div style={{fontSize: "66%", marginTop: "100px"}}>
-                        Created by <a href="thorne.codes">Thorne Melcher</a>.
+                        Created by <a href="https://www.thorne.codes">Thorne Melcher</a> in React
                     </div>
                 </header>
             </div>
