@@ -2,6 +2,7 @@ import './App.css'
 import React from 'react'
 import RedemptionLink from './RedemptionLink'
 
+const redeemURL = "https://store.steampowered.com/account/registerkey?key="
 const keyRegex = new RegExp(/([A-Z,0-9]{5})-([A-Z,0-9]{5})-([A-Z,0-9]{5})/ig)
 
 /**
@@ -16,8 +17,8 @@ export default class App extends React.Component {
         }
     }
 
-    render() {
-        const keyLinks = []
+    getKeys() {
+        const keys = []
         let results
         keyRegex.lastIndex = 0
 
@@ -25,14 +26,32 @@ export default class App extends React.Component {
         while(results = keyRegex.exec(this.state.paste)) {
             // React needs a key for each element in the list, which then can't be retrieved via props
             // So we have to double up on using the key -- both as a React key and as a prop
-            keyLinks.push(<RedemptionLink key={results[0]} steamKey={results[0]} />)
+            keys.push(results[0])
 
             if (keyRegex.lastIndex === keyRegex.index) {
                 keyRegex.lastIndex++
             }
         }
+
+        return keys
+    }
+
+    openAll() {
+        const keys = this.getKeys()
+
+        keys.forEach(key => window.open(redeemURL + key, "_blank"))
+    }
+
+    render() {
+        const keyLinks = []
+        const keys = this.getKeys()
+
+        keys.forEach(key => keyLinks.push(<RedemptionLink key={key} steamKey={key} />))
+
         if(keyLinks.length === 0)
             keyLinks.push(<em key="none">None</em>)
+        else
+            keyLinks.push(<button onClick={this.openAll.bind(this)}>Open All in New Tab</button>)
 
         return (
             <div className="content">
