@@ -51,7 +51,7 @@ export default class App extends React.Component {
         if(keyLinks.length === 0)
             keyLinks.push(<em key="none">None</em>)
         else
-            keyLinks.push(<button onClick={this.openAll.bind(this)}>Open All in New Tab</button>)
+            keyLinks.push(<button key="openAll" onClick={this.openAll.bind(this)}>Open All in New Tab</button>)
 
         return (
             <div className="content">
