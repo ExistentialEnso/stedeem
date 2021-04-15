@@ -43,11 +43,14 @@ export default class App extends React.Component {
                         Paste any text below containing Steam keys, and redemption links will be auto-generated.
                     </p>
 
-                    <p style={{fontSize: "80%"}}>
-                        (No data is sent to our servers, and you can self-host your own instance with the MIT-licensed <a href="https://github.com/ExistentialEnso/stedeem" target="_blank" rel="noreferrer">source code.</a>)
+                    <p className="small">
+                        (No data is sent to our servers, and you can self-host your own instance with the MIT-licensed 
+                        <a href="https://github.com/ExistentialEnso/stedeem" target="_blank" rel="noreferrer">source code.</a>)
                     </p>
 
-                    <textarea value={this.state.paste} onChange={(e) => this.setState({paste: e.target.value})} />
+                    <textarea
+                        value={this.state.paste}
+                        onChange={(e) => this.setState({paste: e.target.value})} />
 
                     <h2>Key Redemption Links</h2>
 
