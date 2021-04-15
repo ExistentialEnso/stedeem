@@ -44,8 +44,8 @@ export default class App extends React.Component {
                     </p>
 
                     <p className="small">
-                        (No data is sent to our servers, and you can self-host your own instance with the MIT-licensed 
-                        <a href="https://github.com/ExistentialEnso/stedeem" target="_blank" rel="noreferrer">source code.</a>)
+                        (No data is sent to our servers, and you can self-host your own instance with the 
+                        MIT-licensed <a href="https://github.com/ExistentialEnso/stedeem" target="_blank" rel="noreferrer">source code.</a>)
                     </p>
 
                     <textarea
