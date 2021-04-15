@@ -4,6 +4,14 @@ import React from 'react'
 const keyRegex = new RegExp(/([A-Z,0-9]{5})-([A-Z,0-9]{5})-([A-Z,0-9]{5})/ig)
 const redeemURL = "https://store.steampowered.com/account/registerkey?key="
 
+var RedemptionLink = ({steamKey}) => {
+    return(
+        <div>
+            <a href={redeemURL + steamKey} target="_blank" rel="noreferrer">{steamKey}</a>
+        </div>
+    )
+}
+
 /**
  * Simple React app that extracts Steam keys from text
  */
@@ -23,18 +31,16 @@ export default class App extends React.Component {
 
         // eslint-disable-next-line
         while(results = keyRegex.exec(this.state.paste)) {
-            keyLinks.push(
-                <div key={results[0]}>
-                    <a href={redeemURL + results[0]} target="_blank" rel="noreferrer">{results[0]}</a>
-                </div>
-            )
+            // React needs a key for each element in the list, which then can't be retrieved via props
+            // So we have to double up on using the key -- both as a React key and as a prop
+            keyLinks.push(<RedemptionLink key={results[0]} steamKey={results[0]} />)
 
             if (keyRegex.lastIndex === keyRegex.index) {
                 keyRegex.lastIndex++
             }
         }
         if(keyLinks.length === 0)
-            keyLinks.push(<em>None</em>)
+            keyLinks.push(<em key="none">None</em>)
 
         return (
             <div className="app">
@@ -42,7 +48,11 @@ export default class App extends React.Component {
                     <h1>Stedeem</h1>
             
                     <p>
-                        Paste any text below containing Steam keys, and redemption links will be auto-generated:
+                        Paste any text below containing Steam keys, and redemption links will be auto-generated.
+                    </p>
+
+                    <p style={{fontSize: "80%"}}>
+                        (No data is sent to our servers, and you can self-host your own instance with the MIT-licensed <a href="https://github.com/ExistentialEnso/stedeem" target="_blank" rel="noreferrer">source code.</a>)
                     </p>
 
                     <textarea value={this.state.paste} onChange={(e) => this.setState({paste: e.target.value})} />
@@ -52,7 +62,7 @@ export default class App extends React.Component {
                     {keyLinks}
 
                     <div className="created-by">
-                        Created by <a href="https://www.thorne.codes" target="_blank" rel="noreferrer">Thorne Melcher</a>. Source on <a href="https://github.com/ExistentialEnso/stedeem" target="_blank" rel="noreferrer">GitHub</a> via MIT License.
+                        Created by <a href="https://www.thorne.codes" target="_blank" rel="noreferrer">Thorne Melcher</a>.
                     </div>
                 </div>
             </div>

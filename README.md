@@ -2,7 +2,7 @@
 
 A super simple React app that strips Steam keys out of text and auto-generates redemption URLs for them.
 
-A live version can be found [here](https://stedeem.herokuapp.com/), or you can clone it run your own instance!
+A live version can be found [here](https://www.stedeem.com/), or you can clone it run your own instance!
 
 ## License
 

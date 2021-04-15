@@ -13,6 +13,10 @@
   color: white;
 }
 
+p {
+  width: 80%;
+}
+
 a, a:visited {
   color:#61dafb
 }
