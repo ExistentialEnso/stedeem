@@ -44,3 +44,9 @@ a, a:visited {
 a:hover {
   color: #FFFFFF
 }
+
+textarea {
+  width: 60%;
+  height: 200px;
+  font-size: 16px;
+}

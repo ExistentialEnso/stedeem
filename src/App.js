@@ -4,6 +4,9 @@ import React from 'react'
 const keyRegex = new RegExp(/([A-Z,0-9]{5})-([A-Z,0-9]{5})-([A-Z,0-9]{5})/ig)
 const redeemURL = "https://store.steampowered.com/account/registerkey?key="
 
+/**
+ * Simple React app that extracts Steam keys from text
+ */
 export default class App extends React.Component {
     constructor(props) {
         super(props)
@@ -20,8 +23,6 @@ export default class App extends React.Component {
 
         // eslint-disable-next-line
         while(results = keyRegex.exec(this.state.paste)) {
-            console.log(results)
-
             keyLinks.push(
                 <div key={results[0]}>
                     <a href={redeemURL + results[0]} target="_blank" rel="noreferrer">{results[0]}</a>
@@ -41,17 +42,17 @@ export default class App extends React.Component {
                     <h1>Stedeem</h1>
             
                     <p>
-                        Paste below any text containing Steam keys, and redemption links will be generated:
+                        Paste any text below containing Steam keys, and redemption links will be auto-generated:
                     </p>
 
-                    <textarea style={{width: "60%", height: "200px", fontSize:"16px"}} value={this.state.paste} onChange={(e) => this.setState({paste: e.target.value})} />
+                    <textarea value={this.state.paste} onChange={(e) => this.setState({paste: e.target.value})} />
 
                     <h2>Key Redemption Links</h2>
 
                     {keyLinks}
 
-                    <div style={{fontSize: "66%", marginTop: "100px"}}>
-                        Created by <a href="https://www.thorne.codes" target="_blank" rel="noreferrer">Thorne Melcher</a> in React
+                    <div style={{fontSize: "66%", marginTop: "100px", marginBottom: "20px"}}>
+                        Created by <a href="https://www.thorne.codes" target="_blank" rel="noreferrer">Thorne Melcher</a> with React.
                     </div>
                 </header>
             </div>
