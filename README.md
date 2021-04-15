@@ -1,7 +1,7 @@
 # Stedeem
 
 A super simple React app that strips Steam keys out of text using regular expressions and auto-generates redemption URLs 
-for them.
+for them. Everything is done browser-side in JavaScript/React.
 
 A live version can be found [here](https://www.stedeem.com/), or you can clone it run your own instance!
 

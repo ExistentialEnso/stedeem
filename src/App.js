@@ -35,30 +35,28 @@ export default class App extends React.Component {
             keyLinks.push(<em key="none">None</em>)
 
         return (
-            <div className="app">
-                <div className="content">
-                    <h1>Stedeem</h1>
-            
-                    <p>
-                        Paste any text below containing Steam keys, and redemption links will be auto-generated.
-                    </p>
+            <div className="content">
+                <h1>Stedeem</h1>
+        
+                <p>
+                    Paste any text below containing Steam keys, and redemption links will be auto-generated below.
+                </p>
 
-                    <p className="small">
-                        (No data is sent to our servers, and you can self-host your own instance with the 
-                        MIT-licensed <a href="https://github.com/ExistentialEnso/stedeem" target="_blank" rel="noreferrer">source code.</a>)
-                    </p>
+                <p className="small">
+                    (No data is sent to our servers, and you can self-host your own instance with the 
+                    MIT-licensed <a href="https://github.com/ExistentialEnso/stedeem" target="_blank" rel="noreferrer">source code.</a>)
+                </p>
 
-                    <textarea
-                        value={this.state.paste}
-                        onChange={(e) => this.setState({paste: e.target.value})} />
+                <textarea
+                    value={this.state.paste}
+                    onChange={(e) => this.setState({paste: e.target.value})} />
 
-                    <h2>Key Redemption Links</h2>
+                <h2>Key Redemption Links</h2>
 
-                    {keyLinks}
+                {keyLinks}
 
-                    <div className="created-by">
-                        Created by <a href="https://www.thorne.codes" target="_blank" rel="noreferrer">Thorne Melcher</a> with React.
-                    </div>
+                <div className="created-by">
+                    Created by <a href="https://www.thorne.codes" target="_blank" rel="noreferrer">Thorne Melcher</a> with React.
                 </div>
             </div>
         )
