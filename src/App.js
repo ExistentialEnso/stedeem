@@ -18,6 +18,7 @@ export default class App extends React.Component {
         let results
         keyRegex.lastIndex = 0
 
+        // eslint-disable-next-line
         while(results = keyRegex.exec(this.state.paste)) {
             console.log(results)
 
