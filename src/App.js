@@ -1,16 +1,8 @@
 import './App.css'
 import React from 'react'
+import RedemptionLink from './RedemptionLink'
 
 const keyRegex = new RegExp(/([A-Z,0-9]{5})-([A-Z,0-9]{5})-([A-Z,0-9]{5})/ig)
-const redeemURL = "https://store.steampowered.com/account/registerkey?key="
-
-var RedemptionLink = ({steamKey}) => {
-    return(
-        <div>
-            <a href={redeemURL + steamKey} target="_blank" rel="noreferrer">{steamKey}</a>
-        </div>
-    )
-}
 
 /**
  * Simple React app that extracts Steam keys from text
