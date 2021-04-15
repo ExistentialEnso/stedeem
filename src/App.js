@@ -52,7 +52,7 @@ export default class App extends React.Component {
                     {keyLinks}
 
                     <div className="created-by">
-                        Created by <a href="https://www.thorne.codes" target="_blank" rel="noreferrer">Thorne Melcher</a> with React.
+                        Created by <a href="https://www.thorne.codes" target="_blank" rel="noreferrer">Thorne Melcher</a>. Source on <a href="https://github.com/ExistentialEnso/stedeem" target="_blank" rel="noreferrer">GitHub</a> via MIT License.
                     </div>
                 </div>
             </div>
