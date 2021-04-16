@@ -8,7 +8,7 @@ const keyRegex = new RegExp(/([A-Z,0-9]{5})-([A-Z,0-9]{5})-([A-Z,0-9]{5})/ig)
 /**
  * Simple React app that extracts Steam keys from text
  */
-export default class App extends React.Component {
+export default class Stedeem extends React.Component {
     constructor(props) {
         super(props)
 
@@ -17,6 +17,11 @@ export default class App extends React.Component {
         }
     }
 
+    /**
+     * Extracts steam keys from a block of text using regular expressions
+     * 
+     * @returns string[] steam keys
+     */
     getKeys() {
         const keys = []
         let results
@@ -36,6 +41,9 @@ export default class App extends React.Component {
         return keys
     }
 
+    /**
+     * Handles the functionality of "Open All in New Tab" through use of the window.open() function
+     */
     openAll() {
         const keys = this.getKeys()
 
