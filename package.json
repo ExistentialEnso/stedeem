@@ -1,5 +1,6 @@
 {
   "name": "stedeem",
+  "description": "A tool for quickly redeeming Steam keys.",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
